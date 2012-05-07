@@ -78,16 +78,104 @@
             <iframe width="560" height="315" src="http://www.youtube.com/embed/owGykVbfgUE?rel=0" frameborder="0" allowfullscreen></iframe>
         </section>
 
-        <section class="slide" id="syntax-1">
-            <h2>Syntactic features - Data Structures</h2> 
-            Data types: Objects – OSM is completely object oriented.  We also support Number, Boolean, etc. which are built in objects.  Class based system.
-            Create a variable, set a variable
-            Type checking, casting, etc
+        <section class="slide" id="what-does-it-look-like">
+            <h2>What's it look like?</h2>
+<pre><code>(: OSM::lang::utils::_ :)
+(: OSM::lang::awesomebaseclasses::LadyScentedBodyWashUser :)
+(: OSM::lang::awesomebaseclasses::ManYourManCouldSmellLike :)
+
+Hello Ladies
+    go() {
+        its :me the ManYourManCouldSmellLike
+        its :your_man the LadyScentedBodyWashUser
+        its :uses_old_spice the Boolean
+
+        the :me is now new ManYourManCouldSmellLike()
+        the :your_man is now new LadyScentedBodyWashUser()
+        the :uses_old_spice is now false
+
+        when(:your_man isa LadyScentedBodyWashUser &amp;&amp; 
+         not :uses_old_spice):
+            say “Your man is not an Old Spice Man!”
+        unless of course(:your_man.smellsLike(:me)):
+            say “I’m on a horse!”
+    }
+do-do-do do-do do-do--do</code></pre>
         </section>
 
-        <section class="slide" id="syntax-2">
+        <section class="slide" id="syntax-data-structures">
+            <h2>Syntactic features - Data Structures</h2> 
+            <ul>
+                <li>Objects! – OSM is a heavily class-based, object-oriented Language</li>
+                <li>We support Number, Boolean, etc. through built-in objects
+                    <ul>
+                        <li>Number Literal
+                            <ul><li><code>-5</code>, <code>10.13</code>, <code>1337.1337f</code></li></ul>
+                        </li>
+                        <li>String Literal
+                            <ul><li><code>"Heeellllooooo!"</code>, <code>"Why hello there #(:person.name)#"</code></li></ul>
+                        </li>
+                        <li>Boolean Literal
+                            <ul><li><code>true</code>, <code>false</code></li></ul>
+                        </li>
+                        <li>Array Literal
+                            <ul>
+                                <li><code>[1,2,3,4]</code></li>
+                                <li><code>["This", "is", "an", "Array"]</code></li>
+                            </ul>
+                        </li>
+                        <li>Dict Literal
+                            <ul>
+                                <li><code>{'key':'value'}</code></li>
+                                <li><code>{'name':'Tinman', 'address':'1 Woodcutter Lane', 'country':'Oz'}</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide" id="syntax-variables">
+            <h2>Syntactic features - Variables and Such</h2>
+            <ul>
+                <li>Creating a variable and setting a variable are two explicit statements (this is mainly for the lolz)
+                    <ul>
+                        <li>Creation: <code>its :x the Number</code></li>
+                        <li>Setting: <code>the :x is now 42</code></li>
+                    </ul>
+                </li>
+                <li>We also have Type checking, casting, and all that good stuff
+                    <ul>
+                       <li>Type Checking: <code>:a_man isa Person</code></li> 
+                       <li>Casting: <code>did you know that :a_lady is LadyScentedBodyWashUser</code></li>
+                       <li>Negation: <code>not :some_boolean_value</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide" id="syntax-control-statements">
             <h2>Syntactic features - Control Statements</h2>
-            If, Case, Loop (show BNF for each and explain why we have but one looping construct)
+                <div id="18" class="slide sexy-trans"><span class="fat-text">If</span>
+<pre><code class="tiny-code">when (:your_man.smellsLike(:sunshine)):
+    ...
+unless of course (:you_man.smellsLike(:old_spice)):
+    ...
+otherwise:
+    ...</code></pre>
+                </div>
+                <div id="19" class="slide sexy-trans"><span class="fat-text">Case</span>
+<pre><code class="tiny-code">looks like (:me.currentAmazingFeat()) {
+    this "Monocle Smile" => ...
+    or this "Swan Dive" => ...
+    but probably this => ...
+}</code></pre>
+                </div>
+                <div id="20" class="slide sexy-trans"><span class="fat-text">Loop</span>
+<pre><code class="tiny-code">look again while ((statement;)? predicate(; statement)?) {
+    statements
+}</code></pre>
+                </div>
         </section>
 
         <section class="slide" id="features-for-reusability">
@@ -104,13 +192,12 @@
             %%Comments%%
             Multi Setters
 
-            When your man smells like an old spice man you don't need to handle exceptions. But you could add this in to the language at a future date.
+            When your code smells like OSM code you don't need to handle exceptions 
+                But you could add this in to the language at a future date.
         </section>
 
         <section class="slide" id="examples-1">
-            <h2>Examples</h2> 
-            # Example Program 2
-            # Expected Result: 24
+            <h2>Examples</h2>
             factorial(its :x the Number) {
                 when(:x < 1):
                     1
@@ -119,11 +206,13 @@
             }
 
             factorial(4)
+
+            => 24
         </section>
 
         <section class="slide" id="examples-2">
-            <h2>Examples (cont.)</h2>
-            Classes/inheritance. Example #3
+            <h2>Classes and Inheritance</h2>
+
         </section>
 
         <section class="slide" id="lang-eval-header">
@@ -221,6 +310,21 @@
         <script>
             $(function() {
                 $.deck('.slide');
+
+                // Make our control statements slide super sexy
+                $(document).bind('deck.change', function(event, from, to) {
+                    console.log("from: " + from + "\n" + "to: " + to);
+                    if (from > 17 && from < 21) {
+                        // catches in special case transitions                        
+                        $("#" + from).fadeOut("normal", function() {
+                            $("#" + to).fadeIn("normal");
+                        });
+                    }
+                    else if (to > 17 || to < 21){
+                        // catch from non-special to special transitions
+                        $("#" + to).fadeIn("normal");
+                    }
+                });
             });
         </script>
 
