@@ -82,6 +82,10 @@
     text-align: center;
 }
 
+.deck-container .slide .bold-text {
+    font-weight: bolder;
+}
+
 .deck-container .slide div.sexy-trans {
     display:none;
 }

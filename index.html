@@ -37,6 +37,7 @@
         <section class="slide" id="motivation">
             <h2>Motivation</h2>
             <ul>
+                <li class="slide">OSM stands for "Old Spice Man" and is pronounced "Awesome"</li>
                 <li class="slide">When?
                     <ul>
                         <li>Created Spring 2012 for MSCS 610: Advanced Theory of Programming Languages (duh).</li>
@@ -138,13 +139,13 @@ do-do-do do-do do-do--do</code></pre>
         <section class="slide" id="syntax-variables">
             <h2>Syntactic features - Variables and Such</h2>
             <ul>
-                <li>Creating a variable and setting a variable are two explicit statements (this is mainly for the lolz)
+                <li class="slide">Creating a variable and setting a variable are two explicit statements (this is mainly for the lolz)
                     <ul>
                         <li>Creation: <code>its :x the Number</code></li>
                         <li>Setting: <code>the :x is now 42</code></li>
                     </ul>
                 </li>
-                <li>We also have Type checking, casting, and all that good stuff
+                <li class="slide">We also have Type checking, casting, and all that good stuff
                     <ul>
                        <li>Type Checking: <code>:a_man isa Person</code></li> 
                        <li>Casting: <code>did you know that :a_lady is LadyScentedBodyWashUser</code></li>
@@ -156,7 +157,8 @@ do-do-do do-do do-do--do</code></pre>
 
         <section class="slide" id="syntax-control-statements">
             <h2>Syntactic features - Control Statements</h2>
-                <div id="18" class="slide sexy-trans"><span class="fat-text">If</span>
+                <div id="21" class="slide sexy-trans">
+                    <span class="fat-text">If</span>
 <pre><code class="tiny-code">when (:your_man.smellsLike(:sunshine)):
     ...
 unless of course (:you_man.smellsLike(:old_spice)):
@@ -164,55 +166,103 @@ unless of course (:you_man.smellsLike(:old_spice)):
 otherwise:
     ...</code></pre>
                 </div>
-                <div id="19" class="slide sexy-trans"><span class="fat-text">Case</span>
+                <div id="22" class="slide sexy-trans">
+                    <span class="fat-text">Case</span>
 <pre><code class="tiny-code">looks like (:me.currentAmazingFeat()) {
     this "Monocle Smile" => ...
     or this "Swan Dive" => ...
     but probably this => ...
 }</code></pre>
                 </div>
-                <div id="20" class="slide sexy-trans"><span class="fat-text">Loop</span>
-<pre><code class="tiny-code">look again while ((statement;)? predicate(; statement)?) {
-    statements
-}</code></pre>
+                <div id="23" class="slide sexy-trans">
+                    <span class="fat-text">Loop</span><br>
+                    <span>This could probably use some explaining...</span>
+<pre><code class="tiny-code"><span class="bold-text">look again while ((</span><em>statement</em><span class="bold-text">;)?</span> <em>predicate</em><span class="bold-text">(;</span> <em>statement</em><span class="bold-text">)?) {</span>
+    <em>statements</em>
+<span class="bold-text">}</span></code></pre>
                 </div>
         </section>
 
         <section class="slide" id="features-for-reusability">
             <h2>Features for Reusability</h2> 
-            Classes, Modules, Objects (show BNF). 
-            3 ways to call a function  
+            <ul>
+                <li id="25" class="slide sexy-trans">
+                    <span>Classes</span>
+<pre><code class="tiny-code"><span class="bold-text">Hello</span> <em>class-name</em> <span class="bold-text">(look at</span> <em>class-name</em><span class="bold-text">)?</span>
+    <em>statements</em>
+<span class="bold-text">do-do-do do-do do-do--do</span></code></pre>
+                </li>
+                <li id="26" class="slide sexy-trans">
+                    <span>Modules</span>
+<pre><code class="tiny-code"><span class="bold-text">(:</span> <em>qualified-class-name</em> <span class="bold-text">:)</span></code></pre>
+                </li>
+                <li id="27" class="slide sexy-trans">
+                    <span>Objects</span>
+<pre><code class="tiny-code"><span class="bold-text">new</span> <em>class-name</em> <span class="bold-text">(</span><em>values</em><span class="bold-text">)</span></code></pre>
+                </li>
+                <li id="28" class="slide sexy-trans">
+                    <span>Functions</span>
+<pre><code class="tiny-code"><em>function-name</em> <span class="bold-text">(</span><em>values</em><span class="bold-text">) {</span>
+   <em>statements</em>
+<span class="bold-text">}</span></code></pre>
+<pre><code class="tiny-code"><em>function-name</em> <span class="bold-text">(</span><em>values</em><span class="bold-text">)</span>
+<em>caller</em><span class="bold-text">.</span><em>function-name</em><span class="bold-text">(</span><em>values</em><span class="bold-text">)</span>
+<em>caller</em> <em>function-name</em> <em>value</em></code></pre>
+                </li>
+            </ul> 
         </section>
 
         <section class="slide" id="cool-features">
             <h2>Other Cool Things</h2>
-            Scala's idea that everything's a function, everything's an object
-            DIAMONDS, TWOTICKETS
-            Awesome base classes: LadyScentedBodyWashUser, ManYourManCanSmellLike
-            %%Comments%%
-            Multi Setters
-
-            When your code smells like OSM code you don't need to handle exceptions 
-                But you could add this in to the language at a future date.
+            <uL>
+                <li class="slide">Uses Scala's idea that everything's an object and operations are really just functions
+                    <ul>
+                        <li><code>5 + 10</code> is the same as <code>5.+(10)</code></li>
+                        <li>This allows for the creation of really cool DSLs</li>
+                        <li>For example, <code>:the_gazelle eats :grass</code> is far eaiser to understand than <code>:x.eats(:y)</code></li>
+                    </ul>
+                </li>
+                <li class="slide">DIAMONDS, TWOTICKETS</li>
+                <li class="slide">Awesome base classes: LadyScentedBodyWashUser, ManYourManCanSmellLike</li>
+                <li class="slide">%%Comments%%</li>
+                <li class="slide">Multi Setters: <code>the :x, :y, :z are now true, "Silverfish Hand Grab", 123.0</code></li>
+                <li class="slide">When your code smells like OSM code you don't need to handle exceptions 
+                    <ul><li>But you could add this in to the language at a future date.</li></ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="examples-1">
             <h2>Examples</h2>
-            factorial(its :x the Number) {
-                when(:x < 1):
-                    1
-                otherwise:
-                    :x * factorial(:x - 1)
-            }
+<pre><code>factorial(its :x the Number) {
+    when(:x < 1):
+        1
+    otherwise:
+        :x * factorial(:x - 1)
+}
 
-            factorial(4)
+factorial(4)
 
-            => 24
+=> 24</code></pre>
         </section>
 
         <section class="slide" id="examples-2">
             <h2>Classes and Inheritance</h2>
+<pre><code>Hello BodyWash
+    its :scent the String
+    setTheScent(its :theScent the String) {
+        the :scent is now :theScent
+    }
+    initialize {
+        the :scent is now DIAMONDS
+    }
+do-do-do do-do do-do—do
 
+Hello LadyScentedBodyWash look at BodyWash
+do-do-do do-do do-do—do
+
+Hello ManlyScentedBodyWash look at BodyWash
+do-do-do do-do do-do—do</pre></code>
         </section>
 
         <section class="slide" id="lang-eval-header">
@@ -220,67 +270,248 @@ otherwise:
             <h1>
                 <span>OSM</span><br>
                 <span>Scala</span><br>
-                <span>Javascript, Ruby, or Python</span>
+                <span>Python</span>
             </h1>
         </section>
 
         <section class="slide" id="simplicity">
             <h2>Simplicity</h2>
+            <ul>
+                <li class="slide"><span>OSM</span>
+                    <ul>
+                       <li>By definition, no. OSM is not writably or readably simple.</li>
+                       <li>This is due to the presence of...I don't even know what to call it...<span class="bold-text">SUPER OPERATORS</span></li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Scala</span>
+                    <ul>
+                        <li>Simpler than OSM, but not as simple as Python</li> 
+                        <li>Concurrency model complicated the overall simplicity of the language</li>
+                        <li>Common function names "tend" to perform common operations</li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Python</span>
+                    <ul>
+                        <li>Very simple</li> 
+                        <li>Becoming very popular as a teaching language due to its easy to understand syntax and operations</li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="orthogonality">
-            <h2>Orthogonality</h2>  
+            <h2>Orthogonality</h2>
+            <ul>
+                <li class="slide"><span>OSM</span>
+                    <ul>
+                       <li>Yes!</li>
+                       <li>This comes from the combination of the Module and Class systems which allows developers to write modular, reuasble solutions</li> 
+                    </ul>
+                </li>
+                <li class="slide"><span>Scala</span>
+                    <ul>
+                       <li>Yes!</li> 
+                       <li>Scala's Orthogonality differs slightly from OSM's in that it is more Orthogonal, due to the concept of Objects (singletons), companion classes, and - in a way - Actors</li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Python</span>
+                    <ul>
+                       <li>Yes!</li> 
+                       <li>Python's Orthoganality comes from its roots in the functional mindset and the modular code concept that is common of "The Python Way"</li>
+                       <li>For example, the design idea that a module with a set of abstract, common functions is better than a class with the same over a resctricted set of data members</li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="control-statements">
-            <h2>Control Statements</h2> 
-            (why we only have one looping construct) Using one one loop in our language looks like this loop in this other language, etc.
+            <h2>Control Statements</h2>
+            <ul>
+                <li class="slide"><span>OSM</span>
+                    <ul>
+                       <li>We previously touched upon how OSM only has one explict control structure that can function in the same fashion as some other types of structures</li> 
+                       <li>We stole this idea from Google's Go Language and their <code>for()</code> loop</li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Scala</span>
+                    <ul>
+                       <li>Scala has both the familiar <code>for()</code> and <code>while()</code> loops that function in a similar fahsion to Java's</li> 
+                       <li>It also has the Python idea of List Comprehensions and common functional operations such as map, fold, and filter
+                            <ul><li><code>for (x <- List.range(0,10)) yield x*x</code></li></ul>
+                       </li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Python</span>
+                    <ul>
+                        <li><span>While python has both a <code>for</code> and <code>while</code> loop, the main Python loop that is most common - for - is actual more like a foreach loop</span>
+                            <ul><li><code>for item in items: ...</code></li></ul>
+                        </li>
+                        <li><span>Python also has list comprehensions - or loops that return a list of items</span>
+                            <ul><li><code>squares = [x**2 for x in range(10)]</code></li></ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="data-types">
-            <h2>Data types, structures</h2>
+            <h2>Data Types and Structures</h2>
+            <ul>
+                <li class="slide"><span>OSM</span>
+                    <ul>
+                       <li>We showed these earlier, but a quick recap is that everything is an object</li>
+                       <li>We have the following literals: Number, String, Boolean, Array, Dict</li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Scala</span>
+                    <ul>
+                       <li>Scala has all the same types as the Java primitives, as well as Unit, Null, Nothing, Any, AnyRef</li>
+                       <li>To achieve the "everything is an object" idea, Scala wraps the primitives in a corresponding Rich* class; for example, RichDouble</li>
+                       <li>Scala also has support for Tuple, List, Range, and Map literals</li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Python</span>
+                    <ul>
+                       <li>Python has Number, Boolean, String, Regex, Tuple, List, and Dict literals</li>
+                       <li>Python also supports Objects and Classes</li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="syntax-considerations">
             <h2>Syntax considerations</h2>
-            form complex statements, etc.  How our syntax differs from other languages
-        </section>
-
-        <section class="slide" id="extraction-support">
-            <h2>Support for Extraction</h2> – no operations, everything is defined.  
+            <ul>
+                <li class="slide"><span>OSM</span>
+                    <ul>
+                       <li>Being Funny...Otherwise the syntax is incredibly verbose</li> 
+                    </ul>
+                </li>
+                <li class="slide"><span>Scala</span>
+                    <ul>
+                       <li>Devised to be incredibly concise.</li>
+                       <li>For example, complex idea of mutablility brought down to one word: <code>val</code> or <code>var</code></li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Python</span>
+                    <ul>
+                       <li>Python, much like Scala, is meant to be concise</li>
+                       <li>Significant whitespace and short builtin function names make the syntax both easy to read and write (i.e lines of code are not very dense syntactically)</li> 
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="abstraction">
-            <h2>Abstraction</h2>
+            <h2>Support for Abstraction</h2>
+            <ul>
+                <li class="slide"><span>OSM</span>
+                    <ul>
+                       <li>Through use of classes, we can abstract away the complexities of what is being done to the underlying data structures</li> 
+                       <li>The idea of "all things are functions" allows for a very expressize DSL allowing for an even further abstraction of what is really happening</li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Scala</span>
+                    <ul>
+                       <li>We stole our idea from Scala, so see above point again :P</li> 
+                    </ul>
+                </li>
+                <li class="slide"><span>Python</span>
+                    <ul>
+                       <li>Python allows the common level of OOP abstraction through the use of classes and modules of functions</li> 
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="expressivity">
             <h2>Expressivity</h2>
-            Define ANYTHING YOU WANT!
+            <ul>
+                <li class="slide"><span>OSM</span>
+                    <ul>
+                       <li>This really relates to our previous point: By allowing for a high level of abstraction, we can allow the developer to be as expressive as they want</li> 
+                    </ul>
+                </li>
+                <li class="slide"><span>Scala</span>
+                    <ul>
+                       <li>Again, we stole this idea from Scala</li>
+                       <li>However, Scala's attempt to blend functional and object-oriented styles allows us to be even more expressive in what we are doing</li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Python</span>
+                    <ul>
+                       <li>Complex functional operations and various literals allow for complex operations to be expressed in a small amount of code</li>
+                       <li>For example, the list comprehensions we showed earlier</li> 
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="type-checking">
             <h2>Type Checking</h2>
+            <ul>
+                <li class="slide"><span>OSM</span>
+                    <ul>
+                       <li>Heavy use of static typing, as seen in how our syntax requires all variables to be given a type explicitly</li> 
+                    </ul>
+                </li>
+                <li class="slide"><span>Scala</span>
+                    <ul>
+                       <li>Scala uses static typing, but its syntax is far more forgiving than ours</li> 
+                       <li><code>val temp = "String"</code> and <code>val temp : String = "String"</code> mean the same thing</li>
+                       <li>It will attempt to infer the given type in the event it is not given</li>
+                    </ul>
+                </li>
+                <li class="slide"><span>Python</span>
+                    <ul>
+                       <li>Dynamic as dynamic can be</li>
+                       <li>How Dynamic is it?</li>
+<pre><code class="tiny-code">age = 5
+age = "Some String"
+age = [ 0, 1, 2, 3]
+age = False
+</code></pre>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="exception-handling">
             <h2>Exception Handling</h2>
-            (we don't have this, talk about why not)
-        </section>
-
-        <section class="slide" id="cost">
-            <h2>Cost</h2>
-            VM
-        </section>
-
-        <section class="slide" id="portability">
-            <h2>Portability</h2>
-            as portable as Scala because of the VM
-            More portable than Python because it doesn't need a separate interpreter/runtime on various platforms.
+            <ul>
+                <li class="slide"><span>OSM</span>
+                    <ul>
+                       <li>Don't have it!</li> 
+                       <li>So, the other two are better, no need to compare :)</li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="credits">
             <h2>Credits and References</h2>
+            <ul>
+                <li>Martin Odersky 
+                    <ul>
+                        <li>For making a language that let's us experience the awesome-ness of the JVM</li>
+                    </ul>
+                </li>
+                <li>Brendan Eich 
+                    <ul>
+                        <li>For giving us Javascript, the most lovingly broken language of all time</li>
+                    </ul>
+                </li>
+                <li>Guido van Rossum 
+                    <ul>
+                        <li>For giving us one of the ugliest class syntaxes ever, wrapped in one of the most useful languages ever</li>
+                    </ul>
+                </li>
+                <li>Isaiah Mustafa 
+                    <ul>
+                        <li>For giving us the "Man Your Man Could Smell Like"-style of line delivery</li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section class="slide" id="end">
@@ -313,16 +544,15 @@ otherwise:
 
                 // Make our control statements slide super sexy
                 $(document).bind('deck.change', function(event, from, to) {
-                    console.log("from: " + from + "\n" + "to: " + to);
-                    if (from > 17 && from < 21) {
+                    if ((from > 20 && from < 24) || (from > 24 && from < 29)) {
                         // catches in special case transitions                        
-                        $("#" + from).fadeOut("normal", function() {
-                            $("#" + to).fadeIn("normal");
+                        $("#" + from).fadeOut("fast", function() {
+                            $("#" + to).fadeIn("fast");
                         });
                     }
-                    else if (to > 17 || to < 21){
+                    else if ((to > 20 || to < 24)  || (to > 24 && to < 29)) {
                         // catch from non-special to special transitions
-                        $("#" + to).fadeIn("normal");
+                        $("#" + to).fadeIn("fast");
                     }
                 });
             });
