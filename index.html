@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>OSM Language</title>
+        <meta name="viewport" content="width=1024, user-scalable=no">
+
+        <!-- Replace path with correct path to deck.core.css. -->
+        <link rel="stylesheet" href="core/deck.core.css" type="text/css">
+        <link rel="stylesheet" href="themes/transition/horizontal-slide.css" type="text/css">
+        <link rel="stylesheet" href="themes/style/osm.css" type="text/css">
+
+        <!-- Any other extension CSS files go here. -->
+        <link rel="stylesheet" href="extensions/goto/deck.goto.css">
+        <link rel="stylesheet" href="extensions/menu/deck.menu.css">
+        <link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+        <link rel="stylesheet" href="extensions/status/deck.status.css">
+        <link rel="stylesheet" href="extensions/hash/deck.hash.css">
+
+        <!-- Replace path with correct path to Modernizr file. -->
+        <script src="modernizr.custom.js"></script>
+
+    </head>
+    <body class="deck-container">
+
+        <!-- Actual Deck Start! -->
+        <section class="slide" id="title-slide">
+            <h1>
+                <span>
+                    Hello Ladies (and Gentlemen)!
+                    <h3>The OSM Programming Language</h3>
+                    <h3>By: Anna Clayton, Michael Cohoon, and Sean Dunn</h3>
+                </span>
+            </h1>
+        </section>
+
+        <section class="slide" id="motivation">
+            <h2>Motivation</h2>
+            <ul>
+                <li class="slide">When?
+                    <ul>
+                        <li>Created Spring 2012 for MSCS 610: Advanced Theory of Programming Languages (duh).</li>
+                    </ul>
+                </li>
+                <li class="slide">Why?
+                    <ul>
+                        <li>Programmers tend to lack a sense of humor when they read or write code. We wanted to force them into a chuckle.</li>
+                    </ul>
+                </li>
+                <li class="slide">Who?
+                    <ul>
+                        <li>Programmers with a sense of humor.</li>
+                    </ul>
+                </li>
+                <li class="slide">What?
+                    <ul>
+                        <li>A general purpose language suitable for writing command line scripts, system administrator tasks, and possibly templating.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide" id="influences">
+            <h2>Influences</h2>
+            <ul>
+                <li class="slide">Scala, Java, and other JVM languages</li>
+                <li class="slide">Ruby</li>
+                <li class="slide">Python</li>
+                <li class="slide">Javascript</li>
+                <li class="slide">Go</li>
+                <li class="slide">and ...</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="old-spice-video">
+            <h2>The Old Spice Man!</h2>
+            <p> Who is the Old Spice Man?</p>
+            <iframe width="560" height="315" src="http://www.youtube.com/embed/owGykVbfgUE?rel=0" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="slide" id="syntax-1">
+            <h2>Syntactic features - Data Structures</h2> 
+            Data types: Objects – OSM is completely object oriented.  We also support Number, Boolean, etc. which are built in objects.  Class based system.
+            Create a variable, set a variable
+            Type checking, casting, etc
+        </section>
+
+        <section class="slide" id="syntax-2">
+            <h2>Syntactic features - Control Statements</h2>
+            If, Case, Loop (show BNF for each and explain why we have but one looping construct)
+        </section>
+
+        <section class="slide" id="features-for-reusability">
+            <h2>Features for Reusability</h2> 
+            Classes, Modules, Objects (show BNF). 
+            3 ways to call a function  
+        </section>
+
+        <section class="slide" id="cool-features">
+            <h2>Other Cool Things</h2>
+            Scala's idea that everything's a function, everything's an object
+            DIAMONDS, TWOTICKETS
+            Awesome base classes: LadyScentedBodyWashUser, ManYourManCanSmellLike
+            %%Comments%%
+            Multi Setters
+
+            When your man smells like an old spice man you don't need to handle exceptions. But you could add this in to the language at a future date.
+        </section>
+
+        <section class="slide" id="examples-1">
+            <h2>Examples</h2> 
+            # Example Program 2
+            # Expected Result: 24
+            factorial(its :x the Number) {
+                when(:x < 1):
+                    1
+                otherwise:
+                    :x * factorial(:x - 1)
+            }
+
+            factorial(4)
+        </section>
+
+        <section class="slide" id="examples-2">
+            <h2>Examples (cont.)</h2>
+            Classes/inheritance. Example #3
+        </section>
+
+        <section class="slide" id="lang-eval-header">
+            <h2>Language Evaluation</h2>
+            <h1>
+                <span>OSM</span><br>
+                <span>Scala</span><br>
+                <span>Javascript, Ruby, or Python</span>
+            </h1>
+        </section>
+
+        <section class="slide" id="simplicity">
+            <h2>Simplicity</h2>
+        </section>
+
+        <section class="slide" id="orthogonality">
+            <h2>Orthogonality</h2>  
+        </section>
+
+        <section class="slide" id="control-statements">
+            <h2>Control Statements</h2> 
+            (why we only have one looping construct) Using one one loop in our language looks like this loop in this other language, etc.
+        </section>
+
+        <section class="slide" id="data-types">
+            <h2>Data types, structures</h2>
+        </section>
+
+        <section class="slide" id="syntax-considerations">
+            <h2>Syntax considerations</h2>
+            form complex statements, etc.  How our syntax differs from other languages
+        </section>
+
+        <section class="slide" id="extraction-support">
+            <h2>Support for Extraction</h2> – no operations, everything is defined.  
+        </section>
+
+        <section class="slide" id="abstraction">
+            <h2>Abstraction</h2>
+        </section>
+
+        <section class="slide" id="expressivity">
+            <h2>Expressivity</h2>
+            Define ANYTHING YOU WANT!
+        </section>
+
+        <section class="slide" id="type-checking">
+            <h2>Type Checking</h2>
+        </section>
+
+        <section class="slide" id="exception-handling">
+            <h2>Exception Handling</h2>
+            (we don't have this, talk about why not)
+        </section>
+
+        <section class="slide" id="cost">
+            <h2>Cost</h2>
+            VM
+        </section>
+
+        <section class="slide" id="portability">
+            <h2>Portability</h2>
+            as portable as Scala because of the VM
+            More portable than Python because it doesn't need a separate interpreter/runtime on various platforms.
+        </section>
+
+        <section class="slide" id="credits">
+            <h2>Credits and References</h2>
+        </section>
+
+        <section class="slide" id="end">
+            <h1>
+                <span>
+                    The End
+                    <h3>Swan Dive!</h3>
+                </span>
+            </h1>
+            <p>Like this theme? Check it out on <a href="https://github.com/Attamusc/OSM-Presentation">GitHub</a>!</p>
+        </section>
+
+        <!-- Update these paths to point to the correct files. -->
+        <script src="jquery-1.7.min.js"></script>
+        <script src="core/deck.core.js"></script>
+
+        <!-- Deck.js extensions here -->
+        <!-- Deck Core and extensions -->
+        <script src="core/deck.core.js"></script>
+        <script src="extensions/hash/deck.hash.js"></script>
+        <script src="extensions/menu/deck.menu.js"></script>
+        <script src="extensions/goto/deck.goto.js"></script>
+        <script src="extensions/status/deck.status.js"></script>
+        <script src="extensions/navigation/deck.navigation.js"></script>
+
+        <!-- Initialize the deck. You can put this in an external file if desired. -->
+        <script>
+            $(function() {
+                $.deck('.slide');
+            });
+        </script>
+
+        <script type="text/javascript">
+          WebFontConfig = {
+            google: { families: [ 'Patua+One::latin' ] }
+          };
+          (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+              '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+          })(); 
+        </script>
+
+    </body>
+</html>
